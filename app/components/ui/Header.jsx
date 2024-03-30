@@ -15,13 +15,13 @@ const Header = () => {
 
         <nav className='flex justify-between gap-2'>
             <a href="#" className='text-base text-slate-100 p-3'>
-                Enlace 1
+                Inicio
             </a>
             <a href="#" className='text-base text-slate-100 p-3'>
-                Enlace 2
+                Productos
             </a>
             <a href="#" className='text-base text-slate-100 p-3'>
-                Enlace 3
+                Nosotros
             </a>
         </nav>
       </div>
