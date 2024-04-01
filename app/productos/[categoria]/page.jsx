@@ -1,10 +1,10 @@
-import ProductList from "@/components/products/ProductList";
-import CategoriesMenu from "@/components/products/CategoriesMenu";
+import ProductList from "@/app/components/products/ProductList";
+import CategoriesMenu from "@/app/components/products/CategoriesMenu";
 
 export async function generateMetadata({ params, searchParams }, parent) {
 
     return {
-        title: `FightShop - ${params.categoria}`
+        title: `FightFever - ${params.categoria}`
     }
 }
 
@@ -21,3 +21,5 @@ const Productos = ({ params }) => {
         </main>
     )
 }
+
+export default Productos

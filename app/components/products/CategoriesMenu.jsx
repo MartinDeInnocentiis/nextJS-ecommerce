@@ -4,8 +4,8 @@ import { usePathname } from "next/navigation"
 
 const links = [
     { label: "Todos", href: "/productos/todos", },
-    { label: "Kimonos", href: "/productos/kimonos", },
     { label: "Guantes", href: "/productos/guantes", },
+    { label: "Bolsos", href: "/productos/bolsos", },
     { label: "Accesorios", href: "/productos/accesorios", },
 ]
 

@@ -1,7 +1,7 @@
-import { mockData } from '@/data/products'
+import { mockData } from '@/app/data/products'
 import Image from 'next/image'
 import QtySelector from "./QtySelector.jsx"
-import GoBack from "..ui/GoBack"
+import GoBack from "../ui/GoBack"
 
 
 const ProductDetail = ({ slug }) => {
