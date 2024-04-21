@@ -4,8 +4,18 @@ import QtySelector from "./QtySelector.jsx"
 import GoBack from "../ui/GoBack"
 
 
-const ProductDetail = ({ slug }) => {
-    const item = mockData.find(p => p.slug === slug)
+const ProductDetail = async ({ slug }) => {
+    //const item = mockData.find(p => p.slug === slug)
+
+    const item = await fetch (`http://localhost:3000/api/product/${slug}`, {
+        cache: 'force-cache',
+        next: {
+            revalidate: 0
+        }
+    }).then(res => res.json())
+    .catch(err => console.error('Error fetching product:', err));
+
+
     return (
         <div className='max-w-4xl m-auto'>
             <GoBack className="text-sm text-blue-500 underline mb-6" />

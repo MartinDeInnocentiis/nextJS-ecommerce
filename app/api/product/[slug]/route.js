@@ -1,9 +1,9 @@
 import { NextResponse } from "next/server"
-import { doc, getDocs } from "firebase/firestore"
+import { doc, getDoc } from "firebase/firestore"
 import { db } from "@/app/firebase/config"
 
 
-export async function GET (_, {params}) {
+export async function GET(_, { params }) {
 
     const { slug } = params
 
