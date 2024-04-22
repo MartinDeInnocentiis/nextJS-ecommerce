@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import CartWidget from './CartWidget'
 
 const Header = () => {
   return (
@@ -26,7 +27,7 @@ const Header = () => {
             Admin
           </a>
           <a href="/cart">
-            <Image
+            <CartWidget
               src={'/cart.png'}
               alt='Logo Image'
               width={50}
