@@ -20,7 +20,7 @@ const CreateForm = () => {
         price: 0,
         type: '',
         slug: '',
-        image: '' // Asegúrate de manejar la URL de la imagen aquí, inicialmente está vacía
+        image: '' 
     })
 
     const handleChange = (e) => {
@@ -39,7 +39,7 @@ const CreateForm = () => {
         const fileSnapshot = await uploadBytes(storageRef, file);
         const fileURL = await getDownloadURL(fileSnapshot.ref);
 
-        setValues({ ...values, image: fileURL }); // Actualizar el estado con la URL de la imagen
+        setValues({ ...values, image: fileURL });
     }
 
     const handleSubmit = async (e) => {

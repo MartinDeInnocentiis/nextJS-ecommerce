@@ -37,7 +37,7 @@ const ProductsTable = async () => {
                                     alt={item.title}
                                     width={80}
                                     height={80}
-                                    unoptimized={isExternalURL(item.image)} // Añade esta propiedad si la imagen es externa
+                                    unoptimized={isExternalURL(item.image)} 
                                 />
                             </td>
                             <td className='p-2'>{item.slug}</td>
@@ -45,10 +45,18 @@ const ProductsTable = async () => {
                             <td className='p-2'>
                                 <Link
                                     href={`/admin/edit/${item.slug}`}
-                                    className='rounded bg-green-400 p-2 text-white'
+                                    className='mr-4 rounded bg-green-400 p-2 text-white'
                                 >
                                     Editar
                                 </Link>
+
+                                <Link
+                                    href={`/admin/delete/${item.slug}`}
+                                    className='rounded bg-red-400 p-2 text-white'
+                                >
+                                    Eliminar
+                                </Link>
+
                             </td>
                         </tr>
                     ))}
