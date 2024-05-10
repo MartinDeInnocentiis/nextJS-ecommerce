@@ -3,9 +3,9 @@ import Image from 'next/image'
 import QtySelector from "./QtySelector.jsx"
 import GoBack from "../ui/GoBack"
 
+const isExternalURL = (url) => /^(http:|https:)/.test(url);
 
 const ProductDetail = async ({ slug }) => {
-    //const item = mockData.find(p => p.slug === slug)
 
     const item = await fetch (`http://localhost:3000/api/product/${slug}`, {
         cache: 'force-cache',
@@ -14,6 +14,7 @@ const ProductDetail = async ({ slug }) => {
         }
     }).then(res => res.json())
     .catch(err => console.error('Error fetching product:', err));
+    const imageUrl = isExternalURL(item.image) ? item.image : `/imgs/products/${item.image}`;
 
 
     return (
@@ -22,7 +23,7 @@ const ProductDetail = async ({ slug }) => {
             <section className='flex gap-6'>
                 <div className='relative basis-1/2'>
                     <Image
-                        src={`/imgs/products/${item.image}`}
+                        src={imageUrl}
                         alt={item.title}
                         width={860}
                         height={860}

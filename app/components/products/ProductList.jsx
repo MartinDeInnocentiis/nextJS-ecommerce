@@ -2,7 +2,6 @@ import { mockData } from '@/app/data/products'
 import ProductCard from './ProductCard'
 
 const ProductList = async ({ categoria }) => {
-    //const items = categoria === 'todos' ? mockData : mockData.filter(item => item.type === categoria)
 
     const items = await fetch (`http://localhost:3000/api/productos/${categoria}`, {
         cache: 'no-cache',

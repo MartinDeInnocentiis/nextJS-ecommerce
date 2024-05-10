@@ -1,8 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 
+const isExternalURL = (url) => /^(http:|https:)/.test(url);
 
 const ProductCard = ({ item }) => {
+    const imageUrl = isExternalURL(item.image) ? item.image : `/imgs/products/${item.image}`;
     return (
         <article className="basis-72 shadow-lg rounded">
             <Link href={`/productos/detail/${item.slug}`}
@@ -10,7 +12,7 @@ const ProductCard = ({ item }) => {
             >
                 <Image
                     alt={item.title}
-                    src={`/imgs/products/${item.image}`}
+                    src={imageUrl}
                     width={300}
                     height={300}
                     objectFit= 'contain' 

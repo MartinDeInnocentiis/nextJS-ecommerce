@@ -1,12 +1,13 @@
-import React from 'react'
-import Image from 'next/image'
-import CartWidget from './CartWidget'
+import React from 'react';
+import Image from 'next/image';
+import CartWidget from './CartWidget';
+import Link from 'next/link'; // Importar Link de Next.js
 
 const Header = () => {
   return (
     <header className='w-full bg-gray-600'>
       <div className='container m-auto py-6 flex justify-between items-center'>
-        <a href="/">
+        <Link href="/" passHref>
           <Image
             src={'/logo.png'}
             alt='Logo Image'
@@ -14,32 +15,31 @@ const Header = () => {
             height={250}
             priority
           />
-        </a>
+        </Link>
 
         <nav className='flex justify-between gap-2'>
-          <a href="/" className='text-base text-slate-100 p-3'>
+          <Link className='text-base text-slate-100 p-3' href="/" passHref>
             Inicio
-          </a>
-          <a href="/productos/todos" className='text-base text-slate-100 p-3'>
+          </Link>
+          <Link className='text-base text-slate-100 p-3' href="/productos/todos" passHref>
             Productos
-          </a>
-          <a href="/admin" className='text-base text-slate-100 p-3'>
+          </Link>
+          <Link className='text-base text-slate-100 p-3' href="/admin" passHref>
             Admin
-          </a>
-          <a href="/cart">
+          </Link>
+          <Link href="/cart" passHref>
             <CartWidget
               src={'/cart.png'}
-              alt='Logo Image'
+              alt='Cart Image'
               width={50}
               height={50}
               priority
             />
-          </a>
+          </Link>
         </nav>
-
       </div>
     </header>
   )
 }
 
-export default Header
+export default Header;

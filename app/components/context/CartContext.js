@@ -22,6 +22,10 @@ export const CartProvider = ({children}) => {
         return cart.reduce ((acc,item) => acc + item.quantity, 0)
     }
 
+    const totalPrice = () => {
+        return cart.reduce((total, item) => total + item.price * item.quantity, 0);
+      }
+
     const emptyCart = () => {
         setCart([])
     }
@@ -33,6 +37,7 @@ export const CartProvider = ({children}) => {
             isInCart,
             totalQty,
             emptyCart,
+            totalPrice
         }}>
             {children}
         </CartContext.Provider>
